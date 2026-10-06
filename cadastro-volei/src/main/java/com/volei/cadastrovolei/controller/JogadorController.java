@@ -13,23 +13,23 @@ public class JogadorController {
 
     private final JogadorService jogadorService;
 
-    @PostMapping
+    @PostMapping // Create
     public ResponseEntity<Void> salvarJogador(@RequestBody Jogador jogador) {
         jogadorService.salvarJogador(jogador);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping
+    @GetMapping // Read
     public ResponseEntity<Jogador> buscarJogadorPorNome(@RequestParam String nome) {
         return ResponseEntity.ok(jogadorService.buscarJogadorPorNome(nome));
     }
-    @DeleteMapping
+    @DeleteMapping  //Delete
     public ResponseEntity<Void> deletarJogadorPorNome(@RequestParam String nome) {
         jogadorService.deletarJogadorPorNome(nome);
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping
+    @PutMapping  //Uptade
     public ResponseEntity<Void> atualizarJogadorPorId(@RequestParam Integer id, @RequestBody Jogador jogador) {
         jogadorService.atualizarJogadorPorId(id, jogador);
         return ResponseEntity.ok().build();
