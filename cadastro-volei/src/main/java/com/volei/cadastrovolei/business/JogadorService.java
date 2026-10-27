@@ -25,6 +25,7 @@ public class JogadorService {
         );
     }
 
+    @org.springframework.transaction.annotation.Transactional
     public void deletarJogadorPorNome(String nome){
         repository.deleteByNome(nome);
     }
